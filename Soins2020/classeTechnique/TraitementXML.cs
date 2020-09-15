@@ -73,8 +73,7 @@ namespace Soins2020
         private static void Initialiser(XmlElement racine)
         {
             LesDossiers = racine.ChildNodes[0].ChildNodes;
-            LesIntervenants = racine.ChildNodes[1].ChildNodes;
-            
+            LesIntervenants = racine.ChildNodes[1].ChildNodes;            
         }
 
         /// <summary>
