@@ -102,7 +102,7 @@ namespace Soins2020
         public static List<Dossier> XmlToDossiers()
         {
             List<Dossier> lesDossiers = new List<Dossier>();
-            foreach (...)
+            foreach (XmlElement unDossierXml in TraitementXML.LesDossiers)
             {
 
             }
@@ -117,6 +117,7 @@ namespace Soins2020
         public static Dossier XmlToDossier(XmlElement unDossierXML)
         {
             string nom = unDossierXML.ChildNodes[0].InnerText;
+            string prenom = unDossierXML.ChildNodes[1].InnerText;
 
             DateTime dateNaissance = TraitementXML.XmlToDateTime((XmlElement)unDossierXML.ChildNodes[2]);
             if (unDossierXML.GetElementsByTagName("dossierprestations").Count == 0)
@@ -147,7 +148,8 @@ namespace Soins2020
         private static Prestation XmlToPrestation(XmlElement unePrestationXML)
         {
             string libellePrestation = unePrestationXML.ChildNodes[0].InnerText;
-            ...
+            string datePrestation = unePrestationXML.ChildNodes[1].InnerText;
+           
             Intervenant unIntervenant = TraitementXML.XmlToIntervenant(unItervenantXML);
 
             return new Prestation(libellePrestation, datePrestation, unIntervenant);
@@ -162,6 +164,8 @@ namespace Soins2020
         private static Intervenant XmlToIntervenant(XmlElement unIntervenantXML)
         {
             string nomIntervenant = unIntervenantXML.ChildNodes[0].InnerText;
+            string prenomIntervenant = unIntervenantXML.ChildNodes[1].InnerText;
+            string specialiteIntervenant = unIntervenantXML.ChildNodes[1].InnerText;
 
             if (unIntervenantXML.ChildNodes.Count == 2)
             {
