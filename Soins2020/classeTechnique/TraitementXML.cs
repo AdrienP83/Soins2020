@@ -104,7 +104,8 @@ namespace Soins2020
             List<Dossier> lesDossiers = new List<Dossier>();
             foreach (XmlElement unDossierXml in TraitementXML.LesDossiers)
             {
-
+                Dossier unDossier = XmlToDossier(unDossierXml);
+                lesDossiers.Add(unDossier);
             }
             return lesDossiers;
         }
@@ -130,9 +131,10 @@ namespace Soins2020
                 // au moins une prestation
                 XmlNodeList lesPrestations = (unDossierXML.GetElementsByTagName("dossierprestations")[0]).ChildNodes;
                 List<Prestation> lesPrestationsDuDossier = new List<Prestation>();
-                foreach (XmlElement unePrestation in lesPrestations)
+                foreach (XmlElement unePrestationXml in lesPrestations)
                 {
-
+                    Prestation unePrestation = XmlToPrestation(unePrestationXml);
+                    lesPrestationsDuDossier.Add(unePrestation);
                 }
                 return new Dossier(nom, prenom, dateNaissance, lesPrestationsDuDossier);
 
