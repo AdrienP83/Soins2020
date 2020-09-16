@@ -218,12 +218,9 @@ namespace Soins2020
         {
             //XmlElement datenaissanceXml = (XmlElement)unDossier.ChildNodes[2];
             int annee = Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("yyyy")[0].InnerText);
-            int mois = Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("mm")[1].InnerText);
-            int jour = Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("dd")[2].InnerText);
-                                                //Condition : si hh == 0            //Alors hh = 0 // sinon hh prend la valeur de innerText
-            int heurePrestation = ((uneDateTimeXml.GetElementsByTagName("hh")).Count == 0) ? (0) : (Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("hh")[3].InnerText));
-            int minutePrestation = ((uneDateTimeXml.GetElementsByTagName("mi")).Count == 0) ? (0) : (Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("mi")[4].InnerText));
-            
+            ...
+			int minutePrestation = ((uneDateTimeXml.GetElementsByTagName("mi")).Count == 0) ? (0) : (Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("mi")[0].InnerText));
+            ...
             return new DateTime(annee, mois, jour, heurePrestation, minutePrestation, 0);
         }
         /// <summary>
