@@ -11,11 +11,10 @@ namespace classesMetier
         private string prenom;
         private List<Prestation> lesPrestation;
 
-        public Intervenant(string nom, string prenom, List<Prestation> lesPrestation)
+        public Intervenant(string nom, string prenom)
         {
             this.nom = nom;
             this.prenom = prenom;
-            this.lesPrestation = lesPrestation;
         }
 
         public string Nom { get => nom; set => nom = value; }
