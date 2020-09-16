@@ -123,6 +123,7 @@ namespace Soins2020
             {
 
                 // pas de prestations
+                return new Dossier(nom, prenom, dateNaissance);
             }
             else
             {
@@ -164,7 +165,11 @@ namespace Soins2020
         {
             string nomIntervenant = unIntervenantXML.ChildNodes[0].InnerText;
             string prenomIntervenant = unIntervenantXML.ChildNodes[1].InnerText;
-            string specialiteIntervenant = unIntervenantXML.ChildNodes[1].InnerText;
+            string specialiteIntervenant = unIntervenantXML.ChildNodes[2].InnerText;
+            string adresseIntervenant = unIntervenantXML.ChildNodes[3].InnerText;
+            string telIntervenant = unIntervenantXML.ChildNodes[4].InnerText;
+            
+
 
             if (unIntervenantXML.ChildNodes.Count == 2)
             {
