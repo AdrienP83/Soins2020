@@ -150,10 +150,10 @@ namespace Soins2020
         private static Prestation XmlToPrestation(XmlElement unePrestationXML)
         {
             string libellePrestation = unePrestationXML.ChildNodes[0].InnerText;
-            DateTime datePrestation = TraitementXML.XmlToDateTime(unePrestationXML);
-
-            Intervenant unIntervenant = TraitementXML.XmlToIntervenant(unItervenantXML);
-
+            DateTime datePrestation = TraitementXML.XmlToDateTime((XmlElement)unePrestationXML.ChildNodes[1]);
+            int idIntervenant = Convert.ToInt16(unePrestationXML.GetAttribute("idintervenant"));
+            XmlElement unIntervenantXML = ChercheIntervenant(idIntervenant);
+            Intervenant unIntervenant = XmlToIntervenant(unIntervenantXML);    
             return new Prestation(libellePrestation, datePrestation, unIntervenant);
         }
 
