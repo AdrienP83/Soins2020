@@ -121,7 +121,6 @@ namespace Soins2020
             DateTime dateNaissance = TraitementXML.XmlToDateTime((XmlElement)unDossierXML.ChildNodes[2]);
             if (unDossierXML.GetElementsByTagName("dossierprestations").Count == 0)
             {
-
                 // pas de prestations
                 return new Dossier(nom, prenom, dateNaissance);
             }
@@ -223,9 +222,10 @@ namespace Soins2020
         {
             //XmlElement datenaissanceXml = (XmlElement)unDossier.ChildNodes[2];
             int annee = Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("yyyy")[0].InnerText);
-            ...
-			int minutePrestation = ((uneDateTimeXml.GetElementsByTagName("mi")).Count == 0) ? (0) : (Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("mi")[0].InnerText));
-            ...
+            int mois = Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("mm")[1].InnerText);
+            int jour = Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("dd")[2].InnerText);
+            int heurePrestation = ((uneDateTimeXml.GetElementsByTagName("hh")).Count == 0) ? (0) : (Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("hh")[3].InnerText));
+            int minutePrestation = ((uneDateTimeXml.GetElementsByTagName("mi")).Count == 0) ? (0) : (Convert.ToInt16(uneDateTimeXml.GetElementsByTagName("mi")[4].InnerText));
             return new DateTime(annee, mois, jour, heurePrestation, minutePrestation, 0);
         }
         /// <summary>
