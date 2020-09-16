@@ -72,8 +72,9 @@ namespace Soins2020
         /// <param name="racine">2lément racine du fichier XML à partir duquel la recherche d'éléments va s'effectuer</param>
         private static void Initialiser(XmlElement racine)
         {
-            LesDossiers = racine.ChildNodes[0].ChildNodes;
-            LesIntervenants = racine.ChildNodes[1].ChildNodes;            
+            LesDossiers = racine.ChildNodes[0].ChildNodes;       
+            LesPrestations = racine.ChildNodes[1].ChildNodes;
+            LesIntervenants = racine.ChildNodes[2].ChildNodes;
         }
 
         /// <summary>
