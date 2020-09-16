@@ -150,7 +150,7 @@ namespace Soins2020
         private static Prestation XmlToPrestation(XmlElement unePrestationXML)
         {
             string libellePrestation = unePrestationXML.ChildNodes[0].InnerText;
-            string datePrestation = unePrestationXML.ChildNodes[1].InnerText;
+            DateTime datePrestation = TraitementXML.XmlToDateTime(unePrestationXML);
            
             Intervenant unIntervenant = TraitementXML.XmlToIntervenant(unItervenantXML);
 
@@ -245,7 +245,7 @@ namespace Soins2020
             }
             if (Convert.ToInt16(((XmlElement)lesPrestations[i]).GetAttribute("idprestation")) == idPrestation)
             {
-
+                return (XmlElement)LesPrestations[i];
             }
             else
             {
@@ -260,11 +260,11 @@ namespace Soins2020
         private static XmlElement ChercheIntervenant(int idIntervenant)
         {
             int i = 0;
-            while (...)
+            while (Convert.ToInt16(((XmlElement)lesIntervenants[i]).GetAttribute("idintervenant")) != idIntervenant && i < lesIntervenants.Count)
             {
-
+                i++;
             }
-            if (//)
+            if (Convert.ToInt16(((XmlElement)lesIntervenants[i]).GetAttribute("idintervenant")) == idIntervenant)
             {
                 return (XmlElement)LesIntervenants[i];
             }

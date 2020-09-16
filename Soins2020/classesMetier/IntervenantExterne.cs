@@ -18,8 +18,8 @@ namespace classesMetier
         /// <param name="adresse"></param>
         /// <param name="tel"></param>
         /// <param name="lesPrestation"></param>
-public IntervenantExterne(string nom, string prenom,string specialite, string adresse, string tel, List<Prestation> lesPrestation)
-            :base (nom,prenom,lesPrestation)
+public IntervenantExterne(string nom, string prenom,string specialite, string adresse, string tel)
+            :base (nom,prenom)
         {
             this.specialite = specialite;
             this.adresse = adresse;
