@@ -39,6 +39,8 @@ namespace classesMetier
         public string NomPatient { get => nomPatient; set => nomPatient = value; }
         public string PrenomPatient { get => prenomPatient; set => prenomPatient = value; }
         public DateTime DateNaissance { get => dateNaissance; set => dateNaissance = value; }
+        public Prestation UnePrestation { get => unePrestation; set => unePrestation = value; }
+        public List<Prestation> MesPrestation { get => mesPrestation; set => mesPrestation = value; }
 
         public void AjoutePrestation(string unLibelle, DateTime uneDate,Intervenant UnIntervenant)
         {

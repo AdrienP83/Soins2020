@@ -15,7 +15,6 @@ namespace classesMetier
         {
             this.nom = nom;
             this.prenom = prenom;
-            this.lesPrestation = lesPrestation;
         }
 
         public string Nom { get => nom; set => nom = value; }

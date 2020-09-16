@@ -72,7 +72,7 @@ namespace Soins2020
         /// <param name="racine">2lément racine du fichier XML à partir duquel la recherche d'éléments va s'effectuer</param>
         private static void Initialiser(XmlElement racine)
         {
-            LesDossiers = racine.ChildNodes[0].ChildNodes;       
+            LesDossiers = racine.ChildNodes[0].ChildNodes;
             LesPrestations = racine.ChildNodes[1].ChildNodes;
             LesIntervenants = racine.ChildNodes[2].ChildNodes;
         }
@@ -151,7 +151,7 @@ namespace Soins2020
         {
             string libellePrestation = unePrestationXML.ChildNodes[0].InnerText;
             DateTime datePrestation = TraitementXML.XmlToDateTime(unePrestationXML);
-           
+
             Intervenant unIntervenant = TraitementXML.XmlToIntervenant(unItervenantXML);
 
             return new Prestation(libellePrestation, datePrestation, unIntervenant);
@@ -170,7 +170,7 @@ namespace Soins2020
             string specialiteIntervenant = unIntervenantXML.ChildNodes[2].InnerText;
             string adresseIntervenant = unIntervenantXML.ChildNodes[3].InnerText;
             string telIntervenant = unIntervenantXML.ChildNodes[4].InnerText;
-            
+
 
 
             if (unIntervenantXML.ChildNodes.Count == 2)
@@ -307,19 +307,20 @@ namespace Soins2020
         public static void AfficherDossier(Dossier unDossier)
         {
             Console.WriteLine("----- Début dossier --------------");
-            Console.WriteLine("Nom : " + unDossier.NomPatient + " Prenom : " + unDossier.PrenomPatient + " Date de naissance : " + unDossier.DateDeNaissancePatient.ToShortDateString());
-            Console.WriteLine("\tNombre de prestations : " + unDossier.MesPrestations.Count);
-            if (unDossier.MesPrestations.Count > 0)
+            Console.WriteLine("Nom : " + unDossier.NomPatient + " Prenom : " + unDossier.PrenomPatient + " Date de naissance : " + unDossier.DateNaissance.ToShortDateString());
+            Console.WriteLine("\tNombre de prestations : " + unDossier.MesPrestation);
+            if (unDossier.MesPrestation.Count > 0)
             {
-                foreach (Prestation unePrestation in unDossier.MesPrestations)
+                foreach (Prestation unePrestation in unDossier.MesPrestation)
                 {
-                    Console.WriteLine("\t" + unePrestation.Libelle + " - " + unePrestation.DateHeureSoin.ToString() + " - " + unePrestation.UnIntervenant);
+                    Console.WriteLine("\t" + unePrestation.Libelle + " - " + unePrestation.DateSoin.ToString() + " - " + unePrestation.L_Intervenant);
                 }
-                Console.WriteLine("nombre de jours de soins : " + unDossier.getNbJoursSoins());
-                Console.WriteLine("nombre de prestations externes : " + unDossier.getNbPrestationsExternes());
+                Console.WriteLine("nombre de jours de soins : " + unDossier.GetNbJourSoins());
+                Console.WriteLine("nombre de prestations externes : " + unDossier.GetNbPrestationExterne());
 
             }
             Console.WriteLine("---   Fin du dossier   ---\n");
         }
 
     }
+}
