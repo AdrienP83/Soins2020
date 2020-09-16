@@ -87,7 +87,7 @@ namespace Soins2020
             XmlDocument SoinsXml = new XmlDocument();
             string fichier = ConfigurationManager.AppSettings["chemin"];
             SoinsXml.Load(fichier);
-            XmlElement racine = //
+            XmlElement racine = SoinsXml.DocumentElement;
             Initialiser(racine);
 
         }

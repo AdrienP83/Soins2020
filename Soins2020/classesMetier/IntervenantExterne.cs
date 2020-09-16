@@ -9,6 +9,15 @@ namespace classesMetier
         private string specialite;
         private string adresse;
         private string tel; 
+        /// <summary>
+        /// Constructeur qui hérite de la classe Intervenant
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="specialite"></param>
+        /// <param name="adresse"></param>
+        /// <param name="tel"></param>
+        /// <param name="lesPrestation"></param>
 public IntervenantExterne(string nom, string prenom,string specialite, string adresse, string tel, List<Prestation> lesPrestation)
             :base (nom,prenom,lesPrestation)
         {
