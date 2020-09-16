@@ -86,27 +86,6 @@ namespace classesMetier
             return cpt;
  
         }
-        public void AfficheDossier()
-        {
-            Console.WriteLine("-------Debut de Dossier-------\nNom : " + this.NomPatient + " Prénom : " + this.PrenomPatient +
-                " Date de Naissance : " + this.DateNaissance.Date.ToString("dd/MM/yyyy"));
-            foreach (Prestation unePrestation in mesPrestation)
-            {
-                if (unePrestation.L_Intervenant is IntervenantExterne)
-                {
-                    Console.WriteLine("\t" + unePrestation.Libelle + " - " + unePrestation.DateSoin +
-                                  " - " + "Intervenant : " + unePrestation.L_Intervenant.Nom + " - "
-                                  + unePrestation.L_Intervenant.Prenom + " Spécialité : " + ((IntervenantExterne)unePrestation.L_Intervenant).Specialite +
-                                  "\n\t" + ((IntervenantExterne)unePrestation.L_Intervenant).Adresse + " - " + ((IntervenantExterne)unePrestation.L_Intervenant).Tel + "\n");
-                }
-                else
-                {
-                    Console.WriteLine("\t" + unePrestation.Libelle + " - " + unePrestation.DateSoin +
-                                  " - " + "Intervenant : " + unePrestation.L_Intervenant.Nom + " - "
-                                  + unePrestation.L_Intervenant.Prenom + "\n");
-                }
-            }
-            Console.WriteLine("-------Fin du Dossier-------\n");
-        }
+       
     }
 }

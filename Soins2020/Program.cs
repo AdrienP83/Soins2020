@@ -26,7 +26,7 @@ namespace Soins2020
                 // Chargement de la collection des objets de la classe Intervenant et IntevenantExterne
                 List<Intervenant> lesIntervenants = TraitementXML.XmlToIntervenants();
                 // affichage des intervenants 
-                TraitementXML.AfficherIntervenants(lesIntervenants);
+                //TraitementXML.AfficherIntervenants(lesIntervenants);
 
             }
             catch (Exception ex)
